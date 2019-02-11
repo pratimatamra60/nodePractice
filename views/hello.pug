@@ -1,3 +1,13 @@
-div.wrapper.hello my dog's name is #{dog}
-    p#firstline Hello! PUG
-    img.dog(src="", alt="")
+extends layout
+
+block content
+    p hello
+    p#firstline Hello! PUG 
+    p interpolate variable as attribute, call inside attribute using js ex alt =`Dog ${dog}`
+    img.dog(src="", alt=`Dog ${dog}`) 
+
+    div.wrapper.hello
+    my dog's name is called in text using interpolate variable inside text #{dog}
+
+    - const upDog = dog.toUpperCase();
+    p hello dog name in uppercase #{upDog}
